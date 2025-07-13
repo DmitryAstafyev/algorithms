@@ -84,7 +84,7 @@ bool proceedSortingCases(SortingCases *cases, SDL_Renderer *renderer) {
   SortingCaseNode *node = cases->home;
   bool done = true;
   while (node) {
-    if (!node->scase->sort(node->scase, renderer)) {
+    if (!node->scase->sort(cases, node->scase, renderer)) {
       done = false;
     }
     node = node->next;

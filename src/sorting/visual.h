@@ -10,6 +10,6 @@ Area *newArea(char *name, int length, int width, int height, int left, int top,
               Nodes *nodes);
 void destroyArea(Area *area);
 
-void renderArea(SortingCase *scase, SDL_Renderer *renderer);
+void renderAreas(SortingCases *cases, SDL_Renderer *renderer);
 
 #endif

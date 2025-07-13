@@ -30,9 +30,10 @@ Node *selection_sorting(SortingCase *scase, SDL_Renderer *renderer) {
   return from->next;
 }
 
-bool selection_sort(SortingCase *scase, SDL_Renderer *renderer) {
+bool selection_sort(SortingCases *cases, SortingCase *scase,
+                    SDL_Renderer *renderer) {
   scase->area->data.last = selection_sorting(scase, renderer);
-  renderArea(scase, renderer);
+  renderAreas(cases, renderer);
   return !scase->area->data.last;
 }
 
@@ -46,7 +47,7 @@ SortingCase *createSelectionSortingCase(int length, int width, int height,
   }
   printf("nodes length = %i\n", nodes->length);
   Area *area =
-      newArea("bubble", nodes->length, width, height, left, top, nodes);
+      newArea("selection", nodes->length, width, height, left, top, nodes);
   if (!area) {
     destroyNodesList(nodes);
     return NULL;

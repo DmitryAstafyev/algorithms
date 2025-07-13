@@ -70,9 +70,6 @@ void renderArea(SortingCase *scase, SDL_Renderer *renderer) {
   int gidx = 0;
   int maxY = -1;
   float x = 0;
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
-
   while (node) {
     if (maxY < node->value) {
       maxY = node->value;
@@ -96,6 +93,19 @@ void renderArea(SortingCase *scase, SDL_Renderer *renderer) {
       idx = 0;
     }
     gidx++;
+    node = node->next;
+  }
+}
+
+void renderAreas(SortingCases *cases, SDL_Renderer *renderer) {
+  if (!cases) {
+    return;
+  }
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_RenderClear(renderer);
+  SortingCaseNode *node = cases->home;
+  while (node) {
+    renderArea(node->scase, renderer);
     node = node->next;
   }
   SDL_RenderPresent(renderer);

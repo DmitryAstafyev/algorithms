@@ -7,8 +7,10 @@
 #include <stdbool.h>
 
 struct SortingCase;
+struct SortingCases;
 
-typedef bool (*SortFunction)(struct SortingCase *scase, SDL_Renderer *renderer);
+typedef bool (*SortFunction)(struct SortingCases *cases,
+                             struct SortingCase *scase, SDL_Renderer *renderer);
 
 typedef struct SortingCase {
   Nodes *nodes;
