@@ -8,6 +8,7 @@ SRC = \
 	src/sorting/sorting.c \
 	src/sorting/visual.c \
 	src/sorting/cases/bubble.c \
+	src/sorting/cases/selection.c \
 	src/model/model.c \
 
 TARGET = algorithms

@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <wchar.h>
 
-Node *applyBubbleSorting(SortingCase *scase, SDL_Renderer *renderer) {
+Node *bubble_sorting(SortingCase *scase, SDL_Renderer *renderer) {
   if (!scase || !scase->nodes || !scase->area) {
     return NULL;
   }
@@ -36,16 +36,9 @@ Node *applyBubbleSorting(SortingCase *scase, SDL_Renderer *renderer) {
 }
 
 bool bubble_sort(SortingCase *scase, SDL_Renderer *renderer) {
-  scase->area->data.last = applyBubbleSorting(scase, renderer);
+  scase->area->data.last = bubble_sorting(scase, renderer);
   renderArea(scase, renderer);
   return !scase->area->data.last;
-  // while (true) {
-  //   scase->area->data.last = applyBubbleSorting(scase, renderer);
-  //   renderArea(scase, renderer);
-  //   if (!scase->area->data.last) {
-  //     break;
-  //   }
-  // }
 }
 
 SortingCase *createBubbleSortingCase(int length, int width, int height,

@@ -1,7 +1,6 @@
-#include "./model/model.h"
 #include "./sorting/cases/bubble.h"
+#include "./sorting/cases/selection.h"
 #include "./sorting/sorting.h"
-#include "./sorting/visual.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,6 +44,8 @@ int main() {
 
   addSortingCase(cases, createBubbleSortingCase(WINDOW_WIDTH - 1, WINDOW_WIDTH,
                                                 200, 0, 200));
+  addSortingCase(cases, createSelectionSortingCase(WINDOW_WIDTH - 1,
+                                                   WINDOW_WIDTH, 200, 0, 400));
 
   SDL_Event e;
   int quit = 0;
