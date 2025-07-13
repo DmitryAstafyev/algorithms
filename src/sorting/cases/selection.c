@@ -39,8 +39,6 @@ bool selection_sort(SortingCases *cases, SortingCase *scase,
 
 SortingCase *createSelectionSortingCase(int length, int width, int height,
                                         int left, int top) {
-  printf("nodes length = %i\n", length);
-
   Nodes *nodes = newNodesList(length);
   if (!nodes) {
     return NULL;

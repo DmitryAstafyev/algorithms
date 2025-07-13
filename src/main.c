@@ -1,4 +1,5 @@
 #include "./sorting/cases/bubble.h"
+#include "./sorting/cases/merge.h"
 #include "./sorting/cases/selection.h"
 #include "./sorting/sorting.h"
 #include <SDL2/SDL.h>
@@ -46,6 +47,8 @@ int main() {
                                                 200, 0, 200));
   addSortingCase(cases, createSelectionSortingCase(WINDOW_WIDTH - 1,
                                                    WINDOW_WIDTH, 200, 0, 400));
+  addSortingCase(cases, createMergeSortingCase(WINDOW_WIDTH - 1, WINDOW_WIDTH,
+                                               200, 0, 600));
 
   SDL_Event e;
   int quit = 0;
